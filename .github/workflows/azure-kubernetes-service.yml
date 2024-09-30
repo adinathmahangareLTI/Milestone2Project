@@ -102,9 +102,6 @@ jobs:
 
       # Deploys application based on given manifest file
       - name: Deploys application
-        uses: Azure/k8s-deploy@v4
-        with:
-          action: deploy
-          manifests: ${{ env.DEPLOYMENT_MANIFEST_PATH }}
-          images: |
-            ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }}
+        run: |
+          kubectl apply -f manifests/deployment.yml
+          kubectl apply -f manifests/service.yml
