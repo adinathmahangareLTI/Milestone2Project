@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: regapp
-        image: adinathcontainerregistry.azurecr.io/latest:8c577d6d4cb6273ce6de0cf00264242313a74703
+        image: adinathcontainerregistry.azurecr.io/latest:e3e4dcb9ded2212ac225b5d2f7be9e40e4f5bf21
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
