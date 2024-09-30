@@ -1,30 +1,80 @@
 apiVersion: apps/v1
+
 kind: Deployment
+
 metadata:
-  name: regapp-deployment
-  labels:
-     app: regapp
+
+  name: regapp-deployment1
+
+  labels: 
+
+    app: regapp
 
 spec:
-  replicas: 2
+
+  replicas: 2 
+
   selector:
+
     matchLabels:
+
       app: regapp
 
   template:
+
     metadata:
+
       labels:
+
         app: regapp
+
     spec:
+
       containers:
+
       - name: regapp
-        image: adinathcontainerregistry.azurecr.io/latest:e3e4dcb9ded2212ac225b5d2f7be9e40e4f5bf21
+
+        image: adinathcontainerregistry.azurecr.io/latest:665cb18968c741b5fb932bb5a5caae7d6426cc89
+
         imagePullPolicy: Always
+
         ports:
+
         - containerPort: 8080
+
   strategy:
+
     type: RollingUpdate
+
     rollingUpdate:
+
       maxSurge: 1
+
       maxUnavailable: 1
-                              
+
+---
+
+apiVersion: v1
+
+kind: Service
+
+metadata:
+
+  name: regapp-service
+
+spec:
+
+  selector:
+
+    app: regapp
+
+  ports:
+
+    - protocol: TCP
+
+      port: 8080
+
+      targetPort: 8080
+
+  type: LoadBalancer
+ 
