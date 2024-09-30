@@ -38,7 +38,7 @@ env:
   AZURE_CONTAINER_REGISTRY: "adinathcontainerregistry"
   CONTAINER_NAME: "latest"
   RESOURCE_GROUP: "adinath-resource-group"
-  CLUSTER_NAME: "adinath-cluster-1"
+  CLUSTER_NAME: "my-cluster"
   DEPLOYMENT_MANIFEST_PATH: "manifests/deployment.yml"
 
 jobs:
