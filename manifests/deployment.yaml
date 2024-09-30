@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: regapp
-        image: 241533119861.dkr.ecr.ap-south-1.amazonaws.com/eksdeployment:latest
+        image: adinathcontainerregistry.azurecr.io/latest:8c577d6d4cb6273ce6de0cf00264242313a74703
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
