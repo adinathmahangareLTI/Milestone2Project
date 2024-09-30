@@ -34,7 +34,7 @@ spec:
 
       - name: regapp
 
-        image: adinathcontainerregistry.azurecr.io/latest:665cb18968c741b5fb932bb5a5caae7d6426cc89
+        image: adinathcontainerregistry.azurecr.io/latest:7c9ff378d43767be07872bb55cebc467d81de1b9
 
         imagePullPolicy: Always
 
